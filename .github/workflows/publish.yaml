@@ -1,0 +1,38 @@
+name: Publish to npm
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # every day at midnight
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Install NodeJS environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - run: corepack enable
+      - run: pnpm install --ignore-scripts
+
+      # https://github.com/orgs/community/discussions/26560#discussioncomment-3252340
+      # https://api.github.com/users/github-actions%5Bbot%5D
+      - name: Commit as github-actions[bot]
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - run: pnpm exec tsx scripts/publish.ts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

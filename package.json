@@ -3,7 +3,11 @@
   "version": "2.34.0",
   "type": "module",
   "description": "A package that automatically installs Hasura CLI binary into your project",
-  "keywords": ["hasura", "hasura-cli", "hasura/cli"],
+  "keywords": [
+    "hasura",
+    "hasura-cli",
+    "hasura/cli"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kirillvakalov/hasura-cli.git"
@@ -14,9 +18,19 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "os": ["darwin", "linux", "win32"],
-  "cpu": ["arm64", "x64"],
-  "files": ["bin", "dist"],
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "arm64",
+    "x64"
+  ],
+  "files": [
+    "bin",
+    "dist"
+  ],
   "bin": {
     "hasura": "bin/hasura"
   },

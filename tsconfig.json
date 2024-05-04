@@ -12,5 +12,6 @@
     "strict": true,
     "rootDir": "./src",
     "outDir": "./dist"
-  }
+  },
+  "exclude": ["scripts"]
 }
