@@ -1,6 +1,6 @@
 {
   "name": "@kirillvakalov/hasura-cli",
-  "version": "2.33.4",
+  "version": "2.33.3",
   "type": "module",
   "description": "A package that automatically installs Hasura CLI binary into your project",
   "keywords": [
