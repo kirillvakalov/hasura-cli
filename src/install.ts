@@ -14,7 +14,7 @@ import type { ReadableStream } from 'node:stream/web';
 const getUrl = (tag: string) => {
   const prefix = 'cli-hasura';
   const platform = process.platform === 'win32' ? 'windows' : process.platform;
-  const arch = platform === 'windows' ? 'amd64' : process.arch;
+  const arch = platform === 'windows' ? 'amd64' : process.arch === 'x64' ? 'amd64' : process.arch;
   const ext = platform === 'windows' ? '.exe' : '';
   const assetName = `${prefix}-${platform}-${arch}${ext}`;
 
