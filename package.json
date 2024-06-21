@@ -1,6 +1,6 @@
 {
   "name": "@kirillvakalov/hasura-cli",
-  "version": "2.40.0-1",
+  "version": "2.40.0-2",
   "type": "module",
   "description": "A package that automatically installs Hasura CLI binary into your project",
   "keywords": [
@@ -14,7 +14,7 @@
   },
   "author": "kirillvakalov",
   "license": "MIT",
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.4.0",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -41,13 +41,15 @@
     "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.2",
+    "@biomejs/biome": "^1.8.2",
     "@octokit/core": "^6.1.2",
-    "@types/node": "^20.12.8",
+    "@types/node": "^20.14.7",
     "@types/semver": "^7.5.8",
-    "semver": "^7.6.0",
-    "tsx": "^4.9.1",
-    "typescript": "^5.4.5",
-    "zx": "^8.0.2"
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.2",
+    "zx": "^8.1.3"
+  },
+  "dependencies": {
+    "semver": "^7.6.2"
   }
 }
