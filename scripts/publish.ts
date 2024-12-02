@@ -13,7 +13,7 @@ const getNpmPublishedVersions = async () => {
   const data = (await response.json()) as { versions: Record<string, unknown> };
   // These versions were published during testing and unpublished later. Since we can't
   // publish the same version twice on npm, we need to exclude them from publishing.
-  const unpublishedVersions = ['2.0.8', '2.38.1'];
+  const unpublishedVersions = ['2.0.8', '2.36.9', '2.38.1'];
 
   return [...unpublishedVersions, ...Object.keys(data.versions)];
 };
